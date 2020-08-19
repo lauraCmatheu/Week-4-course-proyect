@@ -1,3 +1,10 @@
+CodeBook Description
+This document is a codebook that provides descriptions of the variables, the data, and all transformations and work that I performed to clean up the data.
+
+To Get a codebook from R:
+library(codebook)
+new_codebook_rmd()
+
 ---
 title: "Codebook"
 output:
@@ -48,6 +55,7 @@ codebook_data <- detect_missing(codebook_data,
                                    # are more than 5 MAD from the median
     )
 
+
 # If you are not using formr, the codebook package needs to guess which items
 # form a scale. The following line finds item aggregates with names like this:
 # scale = scale_1 + scale_2R + scale_3R
@@ -63,3 +71,8 @@ Create codebook
 ```{r codebook}
 codebook(codebook_data)
 ```
+About variables:
+
+x_train, y_train, x_test, y_test, subject_train and subject_test contain the data from the downloaded files.
+x_data, y_data and subject_data merge the previous datasets to further analysis.
+features contains the correct names for the x_data dataset, which are applied to the column names stored in
